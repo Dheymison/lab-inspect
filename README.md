@@ -30,7 +30,7 @@ docker run -d --name lab2-web -p 8080:80 nginx:alpine
 
 2) Valide no host:
 ```bash
-curl -I http://localhost:8080
+curl http://localhost:8080
 ```
 
 **Critério de sucesso:** resposta `HTTP/1.1 200 OK` (ou similar).
@@ -75,7 +75,7 @@ docker exec -it lab2-web sh -c "rm -rf /usr/share/nginx/html/*"
 
 ### Sintoma
 ```bash
-curl -i http://localhost:8080 | head -n 20
+curl http://localhost:8080 | head -n 20
 ```
 Você deve ver erro (404/403) ou página vazia.
 
@@ -131,7 +131,7 @@ docker start lab2-web
 
 Valide:
 ```bash
-curl -I http://localhost:8080
+curl http://localhost:8080
 ```
 
 ---
@@ -140,7 +140,7 @@ curl -I http://localhost:8080
 Tire prints (ou cole o output) de:
 1) `docker ps` com `lab2-web`
 2) `docker logs --tail 20 lab2-web`
-3) `curl -I http://localhost:8080` (antes e depois de corrigir um cenário)
+3) `curl http://localhost:8080` (antes e depois de corrigir um cenário)
 
 ---
 
@@ -154,7 +154,7 @@ Escolha outra porta:
 ```bash
 docker rm -f lab2-web
 docker run -d --name lab2-web -p 8081:80 nginx:alpine
-curl -I http://localhost:8081
+curl http://localhost:8081
 ```
 
 ---
